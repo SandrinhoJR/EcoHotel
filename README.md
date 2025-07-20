@@ -5,7 +5,7 @@ Este proyecto simula un sistema de ecoHotel, donde el huesped puede reservar su 
 ## Requisitos
 
 - Git
-- entorno de desarollo que corra java
+- Entorno de desarollo que corra java preferencia NetBeans
 
 - ## Cómo usar
 
