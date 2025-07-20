@@ -2,30 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package dto;
 
 import java.time.LocalDate;
+import modelo.Habitacion;
+import modelo.Huesped;
 
 /**
  *
  * @author sandro rendon
  */
-public class Reserva {
+public class ReservaDTO {
     
-   
-    
-    private int idReserva;
+     private int idReserva;
     private LocalDate fechaEntrada;
     private LocalDate fechaSalida;
-    private Huesped huesped;
-    private Habitacion habitacion;
+    private HuespedDTO huespedDTO;
+    private HabitacionDTO habitacionDTO;
 
-    public Reserva(int idReserva, LocalDate fechaEntrada, LocalDate fechaSalida, Huesped huesped, Habitacion habitacion) {
+    public ReservaDTO(int idReserva, LocalDate fechaEntrada, LocalDate fechaSalida, HuespedDTO huespedDTO, HabitacionDTO habitacionDTO) {
         this.idReserva = idReserva;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
-        this.huesped = huesped;
-        this.habitacion = habitacion;
+        this.huespedDTO = huespedDTO;
+        this.habitacionDTO = habitacionDTO;
     }
 
     public int getIdReserva() {
@@ -52,22 +52,26 @@ public class Reserva {
         this.fechaSalida = fechaSalida;
     }
 
-    public Huesped getHuesped() {
-        return huesped;
+    public HuespedDTO getHuespedDTO() {
+        return huespedDTO;
     }
 
-    public void setHuesped(Huesped huesped) {
-        this.huesped = huesped;
+    public void setHuespedDTO(HuespedDTO huespedDTO) {
+        this.huespedDTO = huespedDTO;
     }
 
-    public Habitacion getHabitacion() {
-        return habitacion;
+    public HabitacionDTO getHabitacionDTO() {
+        return habitacionDTO;
     }
 
-    public void setHabitacion(Habitacion habitacion) {
-        this.habitacion = habitacion;
+    public void setHabitacionDTO(HabitacionDTO habitacionDTO) {
+        this.habitacionDTO = habitacionDTO;
     }
-   
+
+
     
+    
+    
+
 
 }

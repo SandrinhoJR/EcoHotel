@@ -12,30 +12,26 @@ import java.util.ArrayList;
  */
 public class Huesped {
 
-    private String documento;
+    private int documento;
     private String nombre;
     private String correo;
     private String telefono;
-    private ArrayList<Reserva> reservas;
+    private ArrayList <Reserva> reservas;
 
-    public Huesped(String documento, String nombre, String correo, String telefono) {
+    public Huesped(int documento, String nombre, String correo, String telefono) {
 
         setDocumento(documento);
         setNombre(nombre);  
         setCorreo(correo);
         setTelefono(telefono);
-
         this.reservas = new ArrayList<>();
     }
 
-    public String getDocumento() {
+    public int getDocumento() {
         return documento;
     }
 
-    public void setDocumento(String documento) {
-        if (documento == null || documento.length() < 5) {
-            throw new IllegalArgumentException("Documento inválido.");
-        }
+    public void setDocumento(int documento) {
         this.documento = documento;
     }
 
@@ -44,9 +40,6 @@ public class Huesped {
     }
 
     public void setNombre(String nombre) {
-        if (nombre == null || nombre.isBlank()) {
-            throw new IllegalArgumentException("El nombre no puede estar vacío.");
-        }
         this.nombre = nombre;
     }
 
@@ -55,9 +48,6 @@ public class Huesped {
     }
 
     public void setCorreo(String correo) {
-        if (correo == null || correo.isBlank()) {
-            throw new IllegalArgumentException("El correo no puede estar vacío.");
-        }
         this.correo = correo;
     }
 
@@ -66,9 +56,6 @@ public class Huesped {
     }
 
     public void setTelefono(String telefono) {
-        if (telefono == null || telefono.length() < 7) {
-            throw new IllegalArgumentException("Teléfono inválido.");
-        }
         this.telefono = telefono;
     }
 }

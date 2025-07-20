@@ -4,29 +4,33 @@
  */
 package dto;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sandro rendon
  */
 public class HuespedDTO {
-    
-        private String documento;
+
+    private int documento;
     private String nombre;
     private String correo;
     private String telefono;
+    private ArrayList <ReservaDTO> reservas;
 
-    public HuespedDTO(String documento, String nombre, String correo, String telefono) {
+    public HuespedDTO(int documento, String nombre, String correo, String telefono) {
         this.documento = documento;
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
+        this.reservas = new ArrayList<>();
     }
 
-    public String getDocumento() {
+    public int getDocumento() {
         return documento;
     }
 
-    public void setDocumento(String documento) {
+    public void setDocumento(int documento) {
         this.documento = documento;
     }
 
@@ -53,8 +57,14 @@ public class HuespedDTO {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
-    
+
+    public ArrayList<ReservaDTO> getReservas() {
+        return reservas;
+    }
+
+    public void setReservas(ArrayList<ReservaDTO> reservas) {
+        this.reservas = reservas;
+    }
     
 
 }

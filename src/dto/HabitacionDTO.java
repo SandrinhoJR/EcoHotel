@@ -2,19 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package dto;
 
 /**
  *
  * @author sandro rendon
  */
-public class Habitacion {
-    private int numero;
+public class HabitacionDTO {
+    
+      private int numero;
     private String tipo;
     private int capacidad;
-    private String estado;
+    private int estado;
 
-    public Habitacion(int numero, String tipo, int capacidad, String estado) {
+    public HabitacionDTO(int numero, String tipo, int capacidad, int estado) {
         this.numero = numero;
         this.tipo = tipo;
         this.capacidad = capacidad;
@@ -45,12 +46,14 @@ public class Habitacion {
         this.capacidad = capacidad;
     }
 
-    public String getEstado() {
+    public int getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
-       this.estado = estado;
-    }   
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+    
+    
     
 }

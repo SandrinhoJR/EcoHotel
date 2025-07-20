@@ -4,6 +4,7 @@
  */
 package dao;
 
+import dto.HuespedDTO;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import modelo.Huesped;
@@ -15,45 +16,45 @@ import modelo.Huesped;
 public class HuespedDAO {
     
     
-    private ArrayList<Huesped> huespedes = new ArrayList<>();
+    private ArrayList<HuespedDTO> huespedesDTO = new ArrayList<>();
 
-    public ArrayList<Huesped> getHuespedes() {
-        return huespedes;
+    public ArrayList<HuespedDTO> getHuespedesDTO() {
+        return huespedesDTO;
     }
 
-    public boolean guardar(Huesped huesped) {
-        if (huesped != null && buscar(huesped.getDocumento())==null) {
-            huespedes.add(huesped);
+    public boolean guardar(HuespedDTO huespedDTO) {
+        if (huespedDTO != null && buscar(huespedDTO.getDocumento())==null) {
+            huespedesDTO.add(huespedDTO);
             return true;
         }
         return false;
     }
 
-    public Huesped buscar(String id) {
-        for (Huesped huesped : huespedes) {
-            if (huesped.getDocumento().equals(id)) {
-                return huesped;
+    public HuespedDTO buscar(int documento) {
+        for (HuespedDTO huespedDTO : huespedesDTO) {
+            if (huespedDTO.getDocumento()==(documento)) {
+                return huespedDTO;
             }
         }
         return null;
     }
 
-    public boolean eliminar(String id) {
-        for (int i = 0; i < huespedes.size(); i++) {
-            if (huespedes.get(i).getDocumento().equals(id)) {
-                huespedes.remove(i);
+    public boolean eliminar(int documento) {
+        for (int i = 0; i < huespedesDTO.size(); i++) {
+            if (huespedesDTO.get(i).getDocumento()==(documento)) {
+                huespedesDTO.remove(i);
                 return true;
             }
         }
         return false;
     }
 
-    public boolean editar(Huesped huesped) {
-        Huesped aux = buscar(huesped.getDocumento());
+    public boolean editar(HuespedDTO huespedDTO) {
+        HuespedDTO aux = buscar(huespedDTO.getDocumento());
         if (aux != null) {
-            aux.setNombre(huesped.getNombre());
-            aux.setCorreo(huesped.getCorreo());
-            aux.setTelefono(huesped.getTelefono());
+            aux.setNombre(huespedDTO.getNombre());
+            aux.setCorreo(huespedDTO.getCorreo());
+            aux.setTelefono(huespedDTO.getTelefono());
             return true;
         }
         return false;
@@ -62,12 +63,12 @@ public class HuespedDAO {
      public DefaultTableModel listar() {
     DefaultTableModel modelo = new DefaultTableModel();
     modelo.setColumnIdentifiers(new String[]{"Documento", "Nombre","Correo","Telefono"});
-    for (Huesped huesped : huespedes) {
+    for (HuespedDTO huespedDTO : huespedesDTO) {
         modelo.addRow(new Object[]{
-            huesped.getDocumento(),
-            huesped.getNombre(),
-            huesped.getCorreo(),
-            huesped.getTelefono()        
+            huespedDTO.getDocumento(),
+            huespedDTO.getNombre(),
+            huespedDTO.getCorreo(),
+            huespedDTO.getTelefono()        
         });
     }
     return modelo;
